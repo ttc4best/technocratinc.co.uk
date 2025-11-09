@@ -21,7 +21,7 @@ $(function () {
             $submitBtn.prop("disabled", true);
 
             $.ajax({
-                url: $('#contactForm').attr('action'),
+                url: 'mail/contact.php',
                 type: "POST",
                 data: formData,
                 cache: false,
