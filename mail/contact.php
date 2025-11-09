@@ -11,7 +11,7 @@ $message = strip_tags(htmlspecialchars($_POST['message']));
 
 $to = "hire@technocratinc.co.uk"; 
 $subject = "$m_subject:  $name";
-$body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\n\nEmail: $email\n\nSubject: $m_subject\n\nMessage: $message";
+$body = "You have received a new message from your website contact form.\n\n"."Here are  testing the details:\n\nName: $name\n\n\nEmail: $email\n\nSubject: $m_subject\n\nMessage: $message";
 $header = "From: $email\r\n";
 $header .= "Reply-To: $email\r\n";
 $header .= "Content-Type: text/plain; charset=UTF-8\r\n";
