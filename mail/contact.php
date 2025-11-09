@@ -40,7 +40,7 @@ try {
     $mail->SMTPAuth   = true;
     $mail->Username   = 'hire@technocratinc.co.uk';      // Your domain email
     $mail->Password   = 'o@Cj[)#=Cy&A*&lW';           // Your email password
-    $mail->SMTPSecure = 'tls';                           // Or 'ssl' if required
+    $mail->SMTPSecure = 'ssl';                           // Or 'ssl' if required
     $mail->Port       = 465;                             // Or 465 for SSL
 
     // Email headers
