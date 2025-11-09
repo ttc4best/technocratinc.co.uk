@@ -1,10 +1,17 @@
 <?php
+// Enable full error reporting for debugging (disable in production)
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// Load PHPMailer classes
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
-require 'PHPMailer/src/Exception.php';
+// Adjust paths based on your folder structure
+require __DIR__ . '/PHPMailer/src/PHPMailer.php';
+require __DIR__ . '/PHPMailer/src/SMTP.php';
+require __DIR__ . '/PHPMailer/src/Exception.php';
 
 // Validate input
 if (
@@ -39,17 +46,13 @@ EOD;
 $mail = new PHPMailer(true);
 
 try {
-    // Enable verbose debug output (disable in production)
-    // $mail->SMTPDebug = 2;
-    // $mail->Debugoutput = 'html';
-
     // SMTP configuration
     $mail->isSMTP();
     $mail->Host       = 'webhosting2024.is.cc';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'hire@technocratinc.co.uk';
     $mail->Password   = 'o@Cj[)#=Cy&A*&lW';
-    $mail->SMTPSecure = 'ssl'; // or 'tls' if needed
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Use constant for clarity
     $mail->Port       = 465;
 
     // Email headers
