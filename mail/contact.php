@@ -9,9 +9,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // Adjust paths based on your folder structure
-require __DIR__ . '/PHPMailer/src/PHPMailer.php';
-require __DIR__ . '/PHPMailer/src/SMTP.php';
-require __DIR__ . '/PHPMailer/src/Exception.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/PHPMailer/src/PHPMailer.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/PHPMailer/src/SMTP.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/PHPMailer/src/Exception.php';
 
 // Validate input
 if (
