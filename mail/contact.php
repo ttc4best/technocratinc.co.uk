@@ -19,35 +19,44 @@ if (
 }
 
 // Sanitize input
-$name     = strip_tags(htmlspecialchars($_POST['name']));
-$email    = strip_tags(htmlspecialchars($_POST['email']));
-$subject  = strip_tags(htmlspecialchars($_POST['subject']));
-$message  = strip_tags(htmlspecialchars($_POST['message']));
+$name    = htmlspecialchars(strip_tags($_POST['name']));
+$email   = htmlspecialchars(strip_tags($_POST['email']));
+$subject = htmlspecialchars(strip_tags($_POST['subject']));
+$message = htmlspecialchars(strip_tags($_POST['message']));
 
 // Compose email body
-$body = "You have received a new message from your website contact form.\n\n";
-$body .= "Name: $name\n";
-$body .= "Email: $email\n";
-$body .= "Subject: $subject\n";
-$body .= "Message:\n$message\n";
+$body = <<<EOD
+You have received a new message from your website contact form.
+
+Name: $name
+Email: $email
+Subject: $subject
+
+Message:
+$message
+EOD;
 
 $mail = new PHPMailer(true);
 
 try {
+    // Enable verbose debug output (disable in production)
+    // $mail->SMTPDebug = 2;
+    // $mail->Debugoutput = 'html';
+
     // SMTP configuration
     $mail->isSMTP();
-    $mail->Host       = 'webhosting2024.is.cc';           // Replace with your SMTP host
+    $mail->Host       = 'webhosting2024.is.cc';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'hire@technocratinc.co.uk';      // Your domain email
-    $mail->Password   = 'o@Cj[)#=Cy&A*&lW';           // Your email password
-    $mail->SMTPSecure = 'ssl';                           // Or 'ssl' if required
-    $mail->Port       = 465;                             // Or 465 for SSL
+    $mail->Username   = 'hire@technocratinc.co.uk';
+    $mail->Password   = 'o@Cj[)#=Cy&A*&lW';
+    $mail->SMTPSecure = 'ssl'; // or 'tls' if needed
+    $mail->Port       = 465;
 
     // Email headers
-    $mail->setFrom($email, $name);
-    $mail->addAddress('hire@technocratinc.co.uk');       // Recipient
+    $mail->setFrom('hire@technocratinc.co.uk', 'Technocrat Website');
+    $mail->addAddress('hire@technocratinc.co.uk');
     $mail->addReplyTo($email, $name);
-    $mail->Subject = "$subject: $name";
+    $mail->Subject = "New Contact Form Submission: $subject";
     $mail->Body    = $body;
 
     // Send email
