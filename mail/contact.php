@@ -45,7 +45,15 @@ EOD;
 
 $mail = new PHPMailer(true);
 
+
+
+
 try {
+
+    // 🔍 Add debug output here
+    $mail->SMTPDebug = 2;
+    $mail->Debugoutput = 'html';
+    
     // SMTP configuration
     $mail->isSMTP();
     $mail->Host       = 'mail.technocratinc.co.uk';
