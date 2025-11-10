@@ -52,7 +52,7 @@ $mail = new PHPMailer(true);
 try {
 
     // 🔍 Add debug output here
-    $mail->SMTPDebug = 2;
+    $mail->SMTPDebug = 0;
     $mail->Debugoutput = 'html';
 
     // SMTP configuration
@@ -78,7 +78,6 @@ try {
 } catch (Exception $e) {
     http_response_code(500);
     echo "Mailer Error: " . $mail->ErrorInfo;
-    file_put_contents('mail_error_log.txt', $mail->ErrorInfo . PHP_EOL, FILE_APPEND);
 
 }
 ?>

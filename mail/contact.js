@@ -29,7 +29,7 @@ $(function () {
                     $successBox.html(`
                         <div class="alert alert-success">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <strong>Your message has been sent.</strong>
+                            <strong>Your message has been sent. Thanks for reaching out. We'll get back to you soon.</strong>
                         </div>
                     `);
                     $form.trigger("reset");
@@ -63,4 +63,9 @@ $(function () {
     $("#name").focus(function () {
         $successBox.html('');
     });
+});
+
+gtag('event', 'contact_form_submission', {
+  'event_category': 'Contact',
+  'event_label': 'Form Sent'
 });
