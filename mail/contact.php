@@ -1,4 +1,10 @@
 <?php
+
+echo '<pre>';
+print_r($_POST);
+echo '</pre>';
+exit();
+
 // Enable full error reporting for debugging (disable in production)
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
