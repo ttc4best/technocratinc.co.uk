@@ -53,7 +53,7 @@ try {
     // 🔍 Add debug output here
     $mail->SMTPDebug = 2;
     $mail->Debugoutput = 'html';
-    
+
     // SMTP configuration
     $mail->isSMTP();
     $mail->Host       = 'mail.technocratinc.co.uk';
@@ -65,7 +65,7 @@ try {
 
     // Email headers
     $mail->setFrom('hire@technocratinc.co.uk', 'Technocrat Website');
-    $mail->addAddress('hire@technocratinc.co.uk');
+    $mail->addAddress('ttc4best@gmail.com');
     $mail->addReplyTo($email, $name);
     $mail->Subject = "New Contact Form Submission: $subject";
     $mail->Body    = $body;
