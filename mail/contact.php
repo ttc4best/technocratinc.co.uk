@@ -48,7 +48,7 @@ $mail = new PHPMailer(true);
 try {
     // SMTP configuration
     $mail->isSMTP();
-    $mail->Host       = 'webhosting2024.is.cc';
+    $mail->Host       = 'mail.technocratinc.co.uk';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'hire@technocratinc.co.uk';
     $mail->Password   = 'o@Cj[)#=Cy&A*&lW';
