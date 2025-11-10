@@ -66,7 +66,7 @@ try {
 
     // Email headers
     $mail->setFrom('hire@technocratinc.co.uk', 'Technocrat Website');
-    $mail->addAddress('ttc4best@gmail.com');
+    $mail->addAddress('hire@technocratinc.co.uk'); // Recipient
     $mail->addReplyTo($email, $name);
     $mail->Subject = "New Contact Form Submission: $subject";
     $mail->Body    = $body;
