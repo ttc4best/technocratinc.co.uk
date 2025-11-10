@@ -1,10 +1,5 @@
 <?php
 
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
-exit();
-
 // Enable full error reporting for debugging (disable in production)
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -83,5 +78,7 @@ try {
 } catch (Exception $e) {
     http_response_code(500);
     echo "Mailer Error: " . $mail->ErrorInfo;
+    file_put_contents('mail_error_log.txt', $mail->ErrorInfo . PHP_EOL, FILE_APPEND);
+
 }
 ?>
