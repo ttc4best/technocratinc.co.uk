@@ -29,7 +29,7 @@ $(function () {
                     $successBox.html(`
                         <div class="alert alert-success">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <strong>Your message has been sent. Thanks for reaching out. We'll get back to you soon.</strong>
+                            <strong>Your . Thanks for reaching out. We'll get back to you soon.</strong>
                         </div>
                     `);
                     $form.trigger("reset");
