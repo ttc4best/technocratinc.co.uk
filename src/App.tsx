@@ -13,6 +13,19 @@ import FAQPage from './pages/FAQPage';
 import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
 
+//  Add from grok
+import { useEffect } from 'react';  // add this import if not there
+
+// Add this inside your App function, right at the top
+function App() {
+  useEffect(() => {
+    // Force hydration on mount
+    window.location.reload();
+  }, []);
+
+  // ... rest of your App code stays the same
+}
+// End of grok addition
 function App() {
   return (
     <BrowserRouter>
