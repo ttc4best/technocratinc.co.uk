@@ -1,32 +1,28 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout';
-import Home from './pages/Home';
-import ServicesPage from './pages/ServicesPage';
-import ServiceDetail from './pages/ServiceDetail';
-import PortfolioPage from './pages/PortfolioPage';
-import PortfolioDetail from './pages/PortfolioDetail';
-import BlogPage from './pages/BlogPage';
-import BlogDetail from './pages/BlogDetail';
-import AboutPage from './pages/AboutPage';
-import ContactPage from './pages/ContactPage';
-import FAQPage from './pages/FAQPage';
-import PrivacyPage from './pages/PrivacyPage';
-import TermsPage from './pages/TermsPage';
+import { useEffect } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Layout from './components/Layout'
+import Home from './pages/Home'
+import ServicesPage from './pages/ServicesPage'
+import ServiceDetail from './pages/ServiceDetail'
+import PortfolioPage from './pages/PortfolioPage'
+import PortfolioDetail from './pages/PortfolioDetail'
+import BlogPage from './pages/BlogPage'
+import BlogDetail from './pages/BlogDetail'
+import AboutPage from './pages/AboutPage'
+import ContactPage from './pages/ContactPage'
+import FAQPage from './pages/FAQPage'
+import PrivacyPage from './pages/PrivacyPage'
+import TermsPage from './pages/TermsPage'
 
-//  Add from grok
-import { useEffect } from 'react';  // add this import if not there
-
-// Add this inside your App function, right at the top
 function App() {
+  // This tiny trick fixes the blank page on Vercel (hydration issue)
   useEffect(() => {
-    // Force hydration on mount
-    window.location.reload();
-  }, []);
+    if (import.meta.env.PROD) {
+      // Only run in production (Vercel), not locally
+      window.location.reload()
+    }
+  }, [])
 
-  // ... rest of your App code stays the same
-}
-// End of grok addition
-function App() {
   return (
     <BrowserRouter>
       <Routes>
@@ -46,7 +42,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App
