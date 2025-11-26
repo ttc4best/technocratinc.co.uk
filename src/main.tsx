@@ -29,9 +29,7 @@ import App from './App.tsx'
 import './index.css'  // ← Make sure this import is there for Tailwind
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <BrowserRouter>
+      <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
-)
+  )
