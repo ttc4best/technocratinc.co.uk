@@ -72,12 +72,12 @@ export default function Services() {
 
   if (loading) {
     return (
-      <section id="services" className="py-32 bg-black relative overflow-hidden">
+      <section id="services" className="py-32 bg-black relative overflow-hidden min-h-screen">
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="absolute top-0 left-1/3 w-96 h-96 bg-purple-600/10 rounded-full filter blur-3xl"></div>
         <div className="absolute bottom-0 right-1/3 w-96 h-96 bg-pink-600/10 rounded-full filter blur-3xl"></div>
 
-        <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 opacity-50">
           <div className="text-center mb-20">
             <h2 className="text-5xl sm:text-6xl font-bold text-white mb-6">
               What We Do Best
@@ -89,11 +89,11 @@ export default function Services() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl animate-pulse">
-                <div className="h-16 w-16 bg-white/10 rounded-2xl mb-6"></div>
-                <div className="h-7 bg-white/10 rounded mb-4"></div>
-                <div className="h-4 bg-white/10 rounded mb-2"></div>
-                <div className="h-4 bg-white/10 rounded w-3/4"></div>
+              <div key={i} className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl">
+                <div className="h-16 w-16 bg-white/10 rounded-2xl mb-6 animate-pulse"></div>
+                <div className="h-7 bg-white/10 rounded mb-4 animate-pulse"></div>
+                <div className="h-4 bg-white/10 rounded mb-2 animate-pulse"></div>
+                <div className="h-4 bg-white/10 rounded w-3/4 animate-pulse"></div>
               </div>
             ))}
           </div>
@@ -103,7 +103,7 @@ export default function Services() {
   }
 
   return (
-    <section id="services" className="py-32 bg-black relative overflow-hidden">
+    <section id="services" className="py-32 bg-black relative overflow-hidden min-h-screen animate-fade-in">
       <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
 
       <div className="absolute top-0 left-1/3 w-96 h-96 bg-purple-600/10 rounded-full filter blur-3xl"></div>
