@@ -1,5 +1,4 @@
-import { useEffect } from 'react'
-import { Routes, Route } from 'react-router-dom'   // ← removed BrowserRouter from here
+import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import ServicesPage from './pages/ServicesPage'
@@ -15,15 +14,7 @@ import PrivacyPage from './pages/PrivacyPage'
 import TermsPage from './pages/TermsPage'
 
 function App() {
-  // This tiny trick fixes the blank page on Vercel/Bolt (hydration issue)
-  useEffect(() => {
-    if (import.meta.env.PROD) {
-      window.location.reload()
-    }
-  }, [])
-
   return (
-    // ← No BrowserRouter here anymore! (it's already in main.tsx)
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
