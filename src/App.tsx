@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'   // ← removed BrowserRouter from here
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import ServicesPage from './pages/ServicesPage'
@@ -15,33 +15,31 @@ import PrivacyPage from './pages/PrivacyPage'
 import TermsPage from './pages/TermsPage'
 
 function App() {
-  // This tiny trick fixes the blank page on Vercel (hydration issue)
+  // This tiny trick fixes the blank page on Vercel/Bolt (hydration issue)
   useEffect(() => {
     if (import.meta.env.PROD) {
-      // Only run in production (Vercel), not locally
       window.location.reload()
     }
   }, [])
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="services" element={<ServicesPage />} />
-          <Route path="services/:slug" element={<ServiceDetail />} />
-          <Route path="portfolio" element={<PortfolioPage />} />
-          <Route path="portfolio/:slug" element={<PortfolioDetail />} />
-          <Route path="blog" element={<BlogPage />} />
-          <Route path="blog/:slug" element={<BlogDetail />} />
-          <Route path="about" element={<AboutPage />} />
-          <Route path="faq" element={<FAQPage />} />
-          <Route path="privacy" element={<PrivacyPage />} />
-          <Route path="terms" element={<TermsPage />} />
-          <Route path="contact" element={<ContactPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    // ← No BrowserRouter here anymore! (it's already in main.tsx)
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="services" element={<ServicesPage />} />
+        <Route path="services/:slug" element={<ServiceDetail />} />
+        <Route path="portfolio" element={<PortfolioPage />} />
+        <Route path="portfolio/:slug" element={<PortfolioDetail />} />
+        <Route path="blog" element={<BlogPage />} />
+        <Route path="blog/:slug" element={<BlogDetail />} />
+        <Route path="about" element={<AboutPage />} />
+        <Route path="faq" element={<FAQPage />} />
+        <Route path="privacy" element={<PrivacyPage />} />
+        <Route path="terms" element={<TermsPage />} />
+        <Route path="contact" element={<ContactPage />} />
+      </Route>
+    </Routes>
   )
 }
 
