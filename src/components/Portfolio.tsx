@@ -29,15 +29,78 @@ export default function Portfolio() {
   };
 
   if (loading) {
-    return null;
+    return (
+      <section id="portfolio" className="py-32 bg-black relative overflow-hidden min-h-screen">
+        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+        <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 opacity-50">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl sm:text-6xl font-bold text-white mb-6">
+              Featured Work
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Explore our portfolio of successful projects and digital transformations
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden">
+                <div className="h-64 bg-white/5 animate-pulse"></div>
+                <div className="p-6">
+                  <div className="h-6 bg-white/10 rounded mb-3 animate-pulse"></div>
+                  <div className="h-4 bg-white/10 rounded w-2/3 mb-4 animate-pulse"></div>
+                  <div className="h-4 bg-white/10 rounded animate-pulse"></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
   }
 
   if (caseStudies.length === 0) {
-    return null;
+    return (
+      <section id="portfolio" className="py-32 bg-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-600/10 rounded-full filter blur-3xl"></div>
+
+        <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl sm:text-6xl font-bold text-white mb-6">
+              Featured Work
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Explore our portfolio of successful projects and digital transformations
+            </p>
+          </div>
+
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-12 text-center">
+            <div className="max-w-2xl mx-auto">
+              <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <ExternalLink className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-3xl font-bold text-white mb-4">
+                Featured Projects Coming Soon
+              </h3>
+              <p className="text-gray-400 mb-8">
+                We're currently curating our best work to showcase here. In the meantime, feel free to reach out to discuss your project needs.
+              </p>
+              <button
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-100 transition-all duration-300"
+              >
+                Get In Touch
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
   }
 
   return (
-    <section id="portfolio" className="py-32 bg-black relative overflow-hidden">
+    <section id="portfolio" className="py-32 bg-black relative overflow-hidden min-h-screen animate-fade-in">
       <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full filter blur-3xl"></div>
 

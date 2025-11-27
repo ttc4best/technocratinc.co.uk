@@ -9,8 +9,8 @@ export default function Hero() {
 
       <div className="absolute inset-0 bg-gradient-radial"></div>
 
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full filter blur-3xl animate-float"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-600/20 rounded-full filter blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full filter blur-3xl animate-float" style={{ willChange: 'transform' }}></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-600/20 rounded-full filter blur-3xl animate-float" style={{ animationDelay: '2s', willChange: 'transform' }}></div>
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-32 text-center z-10">
         <div className="animate-fade-in-up">
