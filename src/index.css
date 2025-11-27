@@ -16,28 +16,23 @@
 
   .animate-fade-in-up {
     animation: fadeInUp 0.8s ease-out 0.1s forwards;
-    will-change: transform, opacity;
     opacity: 0;
   }
 
   .animate-marquee {
     animation: marquee 40s linear infinite;
-    will-change: transform;
   }
 
   .animate-marquee-reverse {
     animation: marquee 40s linear infinite reverse;
-    will-change: transform;
   }
 
   .animate-float {
     animation: float 6s ease-in-out infinite;
-    will-change: transform;
   }
 
   .animate-fade-in {
     animation: fadeIn 0.5s ease-out forwards;
-    will-change: opacity;
   }
 
   @keyframes fadeIn {
@@ -108,7 +103,3 @@ body {
   overflow-x: hidden;
 }
 
-* {
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}

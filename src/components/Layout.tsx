@@ -7,7 +7,10 @@ export default function Layout() {
   const location = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const timer = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 0);
+    return () => clearTimeout(timer);
   }, [location.pathname]);
 
   return (
