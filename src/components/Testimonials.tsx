@@ -43,30 +43,7 @@ export default function Testimonials() {
   };
 
   if (loading) {
-    return (
-      <section className="py-32 bg-black relative overflow-hidden min-h-screen">
-        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-        <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 opacity-50">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl sm:text-6xl font-bold text-white mb-6">
-              Client Testimonials
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Don't just take our word for it - hear from our satisfied clients
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8">
-                <div className="h-4 bg-white/10 rounded mb-4 animate-pulse"></div>
-                <div className="h-4 bg-white/10 rounded mb-4 animate-pulse"></div>
-                <div className="h-4 bg-white/10 rounded w-2/3 animate-pulse"></div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    );
+    return null;
   }
 
   if (testimonials.length === 0) {
@@ -74,7 +51,7 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="py-32 bg-black relative overflow-hidden min-h-screen animate-fade-in">
+    <section className="py-32 bg-black relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-pink-600/10 rounded-full filter blur-3xl"></div>
 
