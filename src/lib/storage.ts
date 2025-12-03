@@ -11,9 +11,9 @@ export const getPublicUrl = (path: string): string => {
 };
 
 export const ASSETS = {
-  logo: getPublicUrl('logo.png'),
-  favicon: getPublicUrl('favicon.png'),
-  certificates: getPublicUrl('All-cert.png'),
+  logo: '/logo.png',
+  favicon: '/favicon.png',
+  certificates: '/All cert.png',
 } as const;
 
 export const uploadAsset = async (file: File, path: string) => {
