@@ -12,6 +12,7 @@ import ContactPage from './pages/ContactPage'
 import FAQPage from './pages/FAQPage'
 import PrivacyPage from './pages/PrivacyPage'
 import TermsPage from './pages/TermsPage'
+import UploadAssetsPage from './pages/UploadAssetsPage'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="privacy" element={<PrivacyPage />} />
         <Route path="terms" element={<TermsPage />} />
         <Route path="contact" element={<ContactPage />} />
+        <Route path="upload-assets" element={<UploadAssetsPage />} />
       </Route>
     </Routes>
   )
