@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Code2, Mail, Phone, MapPin, ArrowUp, Star, Instagram } from 'lucide-react';
 import { ASSETS } from '../lib/storage';
+import ImageWithFallback from './ImageWithFallback';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,10 +16,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
           <div>
             <Link to="/" className="inline-block mb-4">
-              <img
+              <ImageWithFallback
                 src={ASSETS.logo}
                 alt="Technocrat Logo"
                 className="h-12 w-auto object-contain"
+                fallbackIcon={
+                  <div className="flex items-center gap-2">
+                    <Code2 className="w-8 h-8 text-white" />
+                    <span className="text-white font-bold">Technocrat</span>
+                  </div>
+                }
               />
             </Link>
             <p className="text-slate-400 leading-relaxed">
@@ -94,10 +101,16 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4">Tech Certified</h3>
             <div className="bg-slate-800 rounded-lg p-4 mb-4">
-              <img
+              <ImageWithFallback
                 src={ASSETS.certificates}
                 alt="Technology Certifications"
-                className="w-full h-auto object-contain"
+                className="w-full h-auto object-contain min-h-[100px]"
+                fallbackIcon={
+                  <div className="flex flex-col items-center gap-2 py-4">
+                    <Star className="w-8 h-8 text-yellow-400" />
+                    <span className="text-slate-400 text-sm">Certifications</span>
+                  </div>
+                }
               />
             </div>
           </div>
