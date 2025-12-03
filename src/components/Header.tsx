@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Code2 } from 'lucide-react';
 import { ASSETS } from '../lib/storage';
-import ImageWithFallback from './ImageWithFallback';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -47,19 +46,13 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="group flex items-center gap-2">
-            <ImageWithFallback
+          <Link to="/" className="group">
+            <img
               src={ASSETS.logo}
               alt="Technocrat Logo"
               className="h-12 w-auto group-hover:scale-110 transition-transform object-contain"
               loading="eager"
               decoding="async"
-              fallbackIcon={
-                <>
-                  <Code2 className="w-8 h-8 text-white" />
-                  <span className="text-white font-bold text-xl ml-2">Technocrat</span>
-                </>
-              }
             />
           </Link>
 
