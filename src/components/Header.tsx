@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Code2 } from 'lucide-react';
+import { ASSETS } from '../lib/storage';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -47,7 +48,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="group">
             <img
-              src="/logo.png"
+              src={ASSETS.logo}
               alt="Technocrat Logo"
               className="h-12 w-auto group-hover:scale-110 transition-transform object-contain"
               loading="eager"

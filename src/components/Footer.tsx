@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Code2, Mail, Phone, MapPin, ArrowUp, Star, Instagram } from 'lucide-react';
+import { ASSETS } from '../lib/storage';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,7 +16,7 @@ export default function Footer() {
           <div>
             <Link to="/" className="inline-block mb-4">
               <img
-                src="/logo.png"
+                src={ASSETS.logo}
                 alt="Technocrat Logo"
                 className="h-12 w-auto object-contain"
               />
@@ -94,7 +95,7 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4">Tech Certified</h3>
             <div className="bg-slate-800 rounded-lg p-4 mb-4">
               <img
-                src="/All cert.png"
+                src={ASSETS.certificates}
                 alt="Technology Certifications"
                 className="w-full h-auto object-contain"
               />
