@@ -85,8 +85,8 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center gap-3 text-slate-400">
-                <MapPin className="w-5 h-5 text-blue-400" />
-                <span>United Kingdom</span>
+                <MapPin className="w-5 h-5 text-blue-400 flex-shrink-0 mt-1" />
+                <span> Office 16031, 182-184 High Street North, East Ham, E6 2JA  United Kingdom</span>
               </li>
             </ul>
           </div>
@@ -134,7 +134,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-slate-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-slate-400 text-sm space-y-1">
-              <p>© {currentYear} Technocrat Inc. All rights reserved.</p>
+              <p>© {currentYear} Technocrat Technology Communication LTD. All rights reserved.</p>
               <p className="text-slate-500 text-xs">Company Registration No. 16859995</p>
             </div>
 
