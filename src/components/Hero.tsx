@@ -16,7 +16,7 @@ export default function Hero() {
         <div className="animate-fade-in-up">
           <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full">
             <Sparkles className="w-4 h-4 text-purple-400" />
-            <span className="text-sm font-medium text-gray-300">Providing prompt and optimal tech solution to minimize cost and maximize profit</span>
+            <span className="text-sm font-medium text-gray-300">Providing prompt and optimal tech solutions to minimize cost and maximize profit</span>
           </div>
 
           <CodeSlider />
